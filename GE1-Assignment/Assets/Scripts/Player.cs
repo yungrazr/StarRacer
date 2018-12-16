@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
     Rigidbody rb;
     float currentHorizontalSpeed = 0;
-    const float HorizontalSpeed = 600;
+    const float HorizontalSpeed = 10;
 
     // Use this for initialization
     void Start () {
@@ -23,14 +23,12 @@ public class Player : MonoBehaviour {
         //Key inputs to move left/right
         if (Input.GetKey(KeyCode.D))
         {
-            currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, -HorizontalSpeed, Time.deltaTime / 0.2f);
-            rb.AddRelativeForce(Vector3.left * 5 * Time.deltaTime * 50);
+            rb.AddRelativeForce(Vector3.right * HorizontalSpeed * Time.deltaTime * 50);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, HorizontalSpeed, Time.deltaTime / 0.2f);
-            rb.AddRelativeForce(Vector3.right * 5 * Time.deltaTime * 50);
+            rb.AddRelativeForce(Vector3.left * HorizontalSpeed * Time.deltaTime * 50);
         }
 
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
