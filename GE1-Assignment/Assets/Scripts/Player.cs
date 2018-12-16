@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public GameObject pCamera;
+
     Rigidbody rb;
     float currentHorizontalSpeed = 0;
     const float HorizontalSpeed = 10;
+
+    RaycastHit hit;
+    float dist;
+    Vector3 direction;
 
     // Use this for initialization
     void Start () {
@@ -24,16 +30,30 @@ public class Player : MonoBehaviour {
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddRelativeForce(Vector3.right * HorizontalSpeed * Time.deltaTime * 50);
+            rb.transform.localRotation = Quaternion.Slerp(rb.transform.localRotation, Quaternion.Euler(0, 0, 10), Time.deltaTime);
+
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddRelativeForce(Vector3.left * HorizontalSpeed * Time.deltaTime * 50);
+            rb.transform.localRotation = Quaternion.Slerp(rb.transform.localRotation, Quaternion.Euler(0, 0, -10), Time.deltaTime);
         }
 
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
-            currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, 0, Time.deltaTime / 0.1f);
+            rb.transform.localRotation = Quaternion.Slerp(rb.transform.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime);
         }
+
+        dist = Mathf.Infinity;
+        direction = Vector3.down;
+        //edit: to draw ray also//
+        Debug.DrawRay(transform.position, direction * dist, Color.green);
+        //end edit//
+        if (Physics.Raycast(transform.position, direction, out hit, dist))
+        {
+            rb.transform.position = new Vector3(rb.transform.position.x, Mathf.Lerp(rb.transform.position.y, hit.point.y + 1, Time.deltaTime / 0.1f), rb.transform.position.z);
+        }
+
     }
 }
