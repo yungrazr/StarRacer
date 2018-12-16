@@ -7,8 +7,8 @@ public class Player : MonoBehaviour {
     public GameObject pCamera;
 
     Rigidbody rb;
-    float currentHorizontalSpeed = 0;
-    const float HorizontalSpeed = 10;
+    const float playerSpeed = 10;
+    const float playerRotateSpeed = 10;
 
     RaycastHit hit;
     float dist;
@@ -24,19 +24,19 @@ public class Player : MonoBehaviour {
 
 
         //Continuous acceleration
-        rb.AddRelativeForce(Vector3.forward * 5 * Time.deltaTime * 50);
+        rb.AddRelativeForce(Vector3.forward * playerSpeed * Time.deltaTime * 60);
 
         //Key inputs to move left/right
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddRelativeForce(Vector3.right * HorizontalSpeed * Time.deltaTime * 50);
+            rb.AddRelativeForce(Vector3.right * playerRotateSpeed * Time.deltaTime * 50);
             rb.transform.localRotation = Quaternion.Slerp(rb.transform.localRotation, Quaternion.Euler(0, 0, 10), Time.deltaTime);
 
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddRelativeForce(Vector3.left * HorizontalSpeed * Time.deltaTime * 50);
+            rb.AddRelativeForce(Vector3.left * playerRotateSpeed * Time.deltaTime * 50);
             rb.transform.localRotation = Quaternion.Slerp(rb.transform.localRotation, Quaternion.Euler(0, 0, -10), Time.deltaTime);
         }
 
