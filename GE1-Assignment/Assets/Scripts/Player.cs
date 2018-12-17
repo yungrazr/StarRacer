@@ -8,9 +8,9 @@ public class Player : MonoBehaviour {
     public GameObject trail1, trail2;
 
 
-    Rigidbody rb;
-    const float playerSpeed = 20;
-    const float playerStrafeSpeed = 15;
+    public static Rigidbody rb;
+    const float playerSpeed = 50;
+    const float playerStrafeSpeed = 25;
 
     RaycastHit hit;
     float dist;
