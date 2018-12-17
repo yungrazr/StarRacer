@@ -33,12 +33,12 @@ public class RaceTrack : MonoBehaviour
 
     void Update()
     {
-        color += 0.1f;
+        color += 0.01f;
         if(color>1.0f)
         {
             color = 0;
         }
-        m_Renderer.material.color = Color.HSVToRGB(color, 1, (float)AudioAnalyzer.bands[0]);
+        m_Renderer.material.color = Color.HSVToRGB(color, 0.5f, (float)AudioAnalyzer.bands[1]);
 
         if (baseHeight == null)
             baseHeight = mesh.vertices;

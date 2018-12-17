@@ -62,9 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioAnalyzer.cs" />
-    <Compile Include="Assets\Scripts\Camera.cs" />
+    <Compile Include="Assets\Scripts\CancelRotate.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\RaceTrack.cs" />
+    <Compile Include="Assets\Scripts\Visualizer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Dano/Documents/GE1-C15469578-Assignment/GE1-Assignment/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
