@@ -9,8 +9,8 @@ public class Player : MonoBehaviour {
 
 
     Rigidbody rb;
-    const float playerSpeed = 10;
-    const float playerStrafeSpeed = 20;
+    const float playerSpeed = 20;
+    const float playerStrafeSpeed = 15;
 
     RaycastHit hit;
     float dist;
@@ -67,12 +67,12 @@ public class Player : MonoBehaviour {
         if (frontPos.y > backPos.y)
         {
             float angle = Vector3.Angle(frontPos, backPos);
-            rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(angle*2, 0, 0), Time.deltaTime * 5);
+            rb.transform.rotation = Quaternion.Lerp(rb.transform.rotation, Quaternion.Euler(angle*2, 0, 0), Time.deltaTime * 5);
         }
         if (frontPos.y < backPos.y)
         {
             float angle = Vector3.Angle(frontPos, backPos);
-            rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(-angle*2, 0, 0), Time.deltaTime * 5);
+            rb.transform.rotation = Quaternion.Lerp(rb.transform.rotation, Quaternion.Euler(-angle*2, 0, 0), Time.deltaTime * 5);
         }
 
 
