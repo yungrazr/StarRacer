@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
 	void Update () {
         Vector3 frontPos = new Vector3(0, 0, 0);
         Vector3 backPos = new Vector3(0, 0, 0);
+
+        //Move at continous speed
         rb.AddRelativeForce(Vector3.forward * playerSpeed * Time.deltaTime);
 
         //Key inputs to move left/right
@@ -46,6 +48,17 @@ public class Player : MonoBehaviour {
             rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * 5);
         }
 
+        //Collision detection for side of road
+        if (rb.transform.position.x < -19)
+        {
+            rb.transform.position = new Vector3(-19, rb.transform.position.y, rb.transform.position.z);
+        }
+        if (rb.transform.position.x > 19)
+        {
+            rb.transform.position = new Vector3(19, rb.transform.position.y, rb.transform.position.z);
+        }
+
+        //Raycasting
         dist = Mathf.Infinity;
         direction = Vector3.down;
         Vector3 offset = rb.transform.forward * -1f;
