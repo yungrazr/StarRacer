@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c2b1ef468ba924d94e397f5e356ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1493065987096734, guid: c194485e43ce75f4295b559ddf0906ba, type: 2}
+  prefab: {fileID: 1808660858823422, guid: ba8e00525869a4844b1a1dd6cb549880, type: 2}
   racetrack: {fileID: 1509959873}
 --- !u!1 &625504937
 GameObject:
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1509959873}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b2df502623fb9145b6a18aae55fb445, type: 3}
   m_Name: 
