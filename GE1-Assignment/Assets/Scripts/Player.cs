@@ -30,14 +30,14 @@ public class Player : MonoBehaviour {
         rb.AddRelativeForce(Vector3.forward * playerSpeed * Time.deltaTime);
 
         //Key inputs to move left/right
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetAxis("XAxis") == -1)
         {
             rb.AddRelativeForce(Vector3.right * playerStrafeSpeed * Time.deltaTime * 30);
             rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(0, 0, 15), Time.deltaTime * 5);
 
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetAxis("XAxis") == 1)
         {
             rb.AddRelativeForce(Vector3.left * playerStrafeSpeed * Time.deltaTime * 30);
             rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(0, 0, -15), Time.deltaTime * 5);

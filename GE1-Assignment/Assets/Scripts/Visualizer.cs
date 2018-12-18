@@ -39,6 +39,7 @@ public class Visualizer : MonoBehaviour {
         {
             color = 0;
         }
+
         foreach (Transform child in transform)
         {
             m_Renderer = child.gameObject.GetComponent<Renderer>();
