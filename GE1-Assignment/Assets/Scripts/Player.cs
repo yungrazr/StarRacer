@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 
 
     public static Rigidbody rb;
-    const float playerSpeed = 100;
+    const float playerSpeed = 20;
     const float playerStrafeSpeed = 25;
 
     RaycastHit hit;
