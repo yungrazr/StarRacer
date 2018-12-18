@@ -16,7 +16,7 @@ public class RaceTrack : MonoBehaviour
 
     float color = 0;
 
-    void Start()
+    void Awake()
     {
         m_Renderer = GetComponent<Renderer>();
         mesh = GetComponent<MeshFilter>().mesh;
@@ -24,7 +24,8 @@ public class RaceTrack : MonoBehaviour
 
         musicTrack = audioSource.GetComponent<AudioSource>();
         trackLength = musicTrack.clip.length;
-        this.gameObject.transform.localScale = new Vector3(this.gameObject.transform.localScale.x, this.gameObject.transform.localScale.y, trackLength * 1.10f);
+        Debug.Log(trackLength);
+        this.gameObject.transform.localScale = new Vector3(this.gameObject.transform.localScale.x, this.gameObject.transform.localScale.y, trackLength);
     }
 
 
