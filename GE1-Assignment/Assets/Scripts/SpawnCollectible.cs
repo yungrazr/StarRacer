@@ -52,6 +52,7 @@ public class SpawnCollectible : MonoBehaviour
             Debug.Log("first section generated");
             TotalCollectible *= 4;
             Debug.Log(TotalCollectible);
+            ShowPoints.maxPoints = TotalCollectible;
         }
 
         while (Player.rb.gameObject.transform.position.z >=(length/4)-200 && !secondThirdGenerated)

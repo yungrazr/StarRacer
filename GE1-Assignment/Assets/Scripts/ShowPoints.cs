@@ -6,14 +6,19 @@ using UnityEngine.UI;
 public class ShowPoints : MonoBehaviour {
 
     public static int points;
-    Text text;
+    public static int maxPoints;
+    Text pointsText;
+    Text MaxPointstext;
+    public GameObject MaxPoints;
 	// Use this for initialization
 	void Start() {
-		text = this.gameObject.GetComponent<Text>();
+        MaxPointstext = MaxPoints.GetComponent<Text>();
+        pointsText = this.gameObject.GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = points.ToString();
-	}
+        pointsText.text = points.ToString();
+        MaxPointstext.text = "/" + maxPoints.ToString();
+    }
 }
