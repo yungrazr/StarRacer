@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
+using System;
 
 public class AudioAnalyzer : MonoBehaviour
 {
     public GameObject audioSource;
     AudioSource a;
+    public GameObject trackNameText;
+    public GameObject trackDuration;
 
     public static int frameSize = 512;
     public static float[] spectrum;
@@ -30,10 +34,12 @@ public class AudioAnalyzer : MonoBehaviour
     {
         sampleRate = AudioSettings.outputSampleRate;
         binWidth = AudioSettings.outputSampleRate / 2 / frameSize;
-
         a = audioSource.GetComponent<AudioSource>();
         spectrum = new float[frameSize];
         bands = new float[(int)Mathf.Log(frameSize, 2)];
+        var trackName = a.clip.ToString();
+        trackName = trackName.Replace("(UnityEngine.AudioClip)", "");
+        trackNameText.GetComponent<Text>().text = "Now playing: " + trackName;
     }
 
     void GetFrequencyBands()
@@ -59,5 +65,6 @@ public class AudioAnalyzer : MonoBehaviour
     {
         a.GetSpectrumData(spectrum, 0, FFTWindow.Blackman);
         GetFrequencyBands();
+        trackDuration.GetComponent<Text>().text = Math.Round(a.time, 2).ToString();
     }
 }

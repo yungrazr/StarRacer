@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
     public GameObject pCamera;
     public GameObject trail1, trail2;
-
+    private float color;
 
     public static Rigidbody rb;
     const float playerSpeed = 20;
@@ -19,14 +19,13 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0, 0, 20);
     }
 	
 	// Update is called once per frame
 	void Update () {
         Vector3 frontPos = new Vector3(0, 0, 0);
         Vector3 backPos = new Vector3(0, 0, 0);
-
-        //Move at continous speed
         rb.AddRelativeForce(Vector3.forward * playerSpeed * Time.deltaTime);
 
         //Key inputs to move left/right
@@ -88,7 +87,26 @@ public class Player : MonoBehaviour {
             rb.transform.rotation = Quaternion.Lerp(rb.transform.rotation, Quaternion.Euler(-angle*2, 0, 0), Time.deltaTime * 5);
         }
 
+        color += 0.01f;
+        if (color > 1.0f)
+        {
+            color = 0;
+        }
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[1]), 0.0f), new GradientColorKey(Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[1]), 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(1, 0.0f), new GradientAlphaKey(1, 1.0f) }
+        );
 
-
+        if (Physics.Raycast(transform.position, direction, out hit, dist))
+        {
+            trail1.GetComponent<TrailRenderer>().colorGradient = gradient;
+            trail1.transform.position = new Vector3(trail1.transform.position.x, Mathf.Lerp(trail1.transform.position.y, hit.point.y + 2, Time.deltaTime / 0.001f), trail1.transform.position.z);
+        }
+        if (Physics.Raycast(transform.position, direction, out hit, dist))
+        {
+            trail2.GetComponent<TrailRenderer>().colorGradient = gradient;
+            trail2.transform.position = new Vector3(trail2.transform.position.x, Mathf.Lerp(trail2.transform.position.y, hit.point.y + 2, Time.deltaTime / 0.001f), trail2.transform.position.z);
+        }
     }
 }

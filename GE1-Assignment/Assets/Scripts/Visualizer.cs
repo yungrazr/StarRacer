@@ -49,7 +49,7 @@ public class Visualizer : MonoBehaviour {
             m_Renderer.material.color = Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[frequencyBand]);
         }
         angleRotate += (float)AudioAnalyzer.bands[1] * rotationDirection;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angleRotate), 0.1f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angleRotate), 1);
         transform.position = new Vector3(0, Player.rb.transform.position.y, Player.rb.transform.position.z + distanceFromPlayer);
 
     }

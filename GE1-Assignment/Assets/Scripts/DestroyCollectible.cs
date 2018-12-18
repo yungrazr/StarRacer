@@ -16,8 +16,17 @@ public class DestroyCollectible : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        ShowPoints.points++;
-        Debug.Log("hit");
-        Object.Destroy(this.gameObject);
+        //If player hits the collectible, points are added
+        if(other==Player.rb.GetComponent<BoxCollider>())
+        {
+            ShowPoints.points++;
+            Object.Destroy(this.gameObject);
+        }
+        //else the collectible is removed by the destroy collider.
+        else
+        {
+            Object.Destroy(this.gameObject);
+        }
+
     }
 }

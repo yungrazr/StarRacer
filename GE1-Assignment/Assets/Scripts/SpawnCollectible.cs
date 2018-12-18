@@ -19,11 +19,11 @@ public class SpawnCollectible : MonoBehaviour
     void Start()
     {
         //Generate the collectibles for the whole length of track
-        length = racetrack.transform.localScale.z * 20;
+        length = racetrack.transform.localScale.z * 100;
         for (int i = 100; i < length; i += 100)
         {
             laneChosen = rnd.Next(0, 4);
-            for (int j = 0; j < 100; j += 10)
+            for (int j = 0; j < 100; j += 25)
             {
                 Vector3 pos;
                 pos.x = lanes[laneChosen];
