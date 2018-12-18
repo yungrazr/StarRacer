@@ -25,7 +25,7 @@ public class RaceTrack : MonoBehaviour
         musicTrack = audioSource.GetComponent<AudioSource>();
         trackLength = musicTrack.clip.length;
         Debug.Log("track length in sec:" + trackLength);
-        //this.gameObject.transform.localScale = new Vector3(trackLength * 10 * Time.deltaTime * 60, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
+        this.gameObject.transform.localScale = new Vector3(this.gameObject.transform.localScale.x, this.gameObject.transform.localScale.y, trackLength * 1.16f);
     }
 
 
@@ -42,7 +42,7 @@ public class RaceTrack : MonoBehaviour
         for (int i = 0; i < vertices.Length; i++)
         {
             Vector3 vertex = mesh.vertices[i];
-            vertex.y += Mathf.Sin(Time.time * speed + mesh.vertices[i].z) * (float)AudioAnalyzer.bands[1];
+            vertex.y += Mathf.Sin(Time.time * speed + mesh.vertices[i].z) * scale * (float)AudioAnalyzer.bands[1];
             vertices[i] = vertex;
         }
         mesh.vertices = vertices;

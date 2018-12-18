@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2df502623fb9145b6a18aae55fb445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 1
+  scale: 2
   speed: 1
   audioSource: {fileID: 625504937}
 --- !u!23 &1509959875
@@ -969,7 +969,7 @@ Transform:
   m_GameObject: {fileID: 1509959873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 160}
+  m_LocalScale: {x: 1, y: 1, z: 200}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -10506,7 +10506,7 @@ Transform:
   m_GameObject: {fileID: 1946858875}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 3537, z: 54}
-  m_LocalScale: {x: 99.99987, y: 99.99996, z: 99.99992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 980953242}
   m_RootOrder: 4
@@ -10521,8 +10521,6 @@ GameObject:
   - component: {fileID: 2147382380}
   - component: {fileID: 2147382384}
   - component: {fileID: 2147382383}
-  - component: {fileID: 2147382382}
-  - component: {fileID: 2147382381}
   m_Layer: 0
   m_Name: FirstPersonCamera
   m_TagString: MainCamera
@@ -10536,35 +10534,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2147382379}
-  m_LocalRotation: {x: -0.13571563, y: 0, z: 0, w: 0.99074787}
+  m_LocalRotation: {x: -0.01745245, y: 0, z: 0, w: 0.99984777}
   m_LocalPosition: {x: 0, y: 400, z: 195.5}
   m_LocalScale: {x: 0, y: 1, z: 0.9999989}
   m_Children: []
   m_Father: {fileID: 980953242}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -15.6, y: 0, z: 0}
---- !u!114 &2147382381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2147382379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bf37d445e05604f90695a149a02fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2147382382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2147382379}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bf37d445e05604f90695a149a02fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_LocalEulerAnglesHint: {x: -2, y: 0, z: 0}
 --- !u!81 &2147382383
 AudioListener:
   m_ObjectHideFlags: 0
@@ -10594,7 +10570,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 120
+  field of view: 130
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
