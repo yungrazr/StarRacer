@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Visualizer : MonoBehaviour {
 
@@ -30,7 +31,6 @@ public class Visualizer : MonoBehaviour {
             obj.transform.parent = gameObject.transform;
         }
     }
-
 
     void Update()
     {

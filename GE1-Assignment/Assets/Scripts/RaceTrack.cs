@@ -24,7 +24,7 @@ public class RaceTrack : MonoBehaviour
 
         musicTrack = audioSource.GetComponent<AudioSource>();
         trackLength = musicTrack.clip.length;
-        Debug.Log("track length in sec:" + trackLength);
+        //Debug.Log("track length in sec:" + trackLength);
         this.gameObject.transform.localScale = new Vector3(this.gameObject.transform.localScale.x, this.gameObject.transform.localScale.y, trackLength * 1.16f);
     }
 
