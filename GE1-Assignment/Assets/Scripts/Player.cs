@@ -80,12 +80,12 @@ public class Player : MonoBehaviour {
         if (frontPos.y > backPos.y)
         {
             float angle = Vector3.Angle(frontPos, backPos);
-            rb.transform.rotation = Quaternion.Lerp(rb.transform.rotation, Quaternion.Euler(angle*2, 0, 0), Time.deltaTime * 5);
+            rb.transform.rotation = Quaternion.Lerp(rb.transform.rotation, Quaternion.Euler(angle*10, 0, 0), Time.deltaTime * 5);
         }
         if (frontPos.y < backPos.y)
         {
             float angle = Vector3.Angle(frontPos, backPos);
-            rb.transform.rotation = Quaternion.Lerp(rb.transform.rotation, Quaternion.Euler(-angle*2, 0, 0), Time.deltaTime * 5);
+            rb.transform.rotation = Quaternion.Lerp(rb.transform.rotation, Quaternion.Euler(-angle*10, 0, 0), Time.deltaTime * 5);
         }
 
 
