@@ -9,8 +9,8 @@ public class Player : MonoBehaviour {
     private float color;
 
     public static Rigidbody rb;
-    const float playerSpeed = 20;
-    const float playerStrafeSpeed = 40;
+    const float playerSpeed = 25;
+    const float playerStrafeSpeed = 50;
 
     RaycastHit hit;
     float dist;
@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time);
         Vector3 frontPos = new Vector3(0, 0, 0);
         Vector3 backPos = new Vector3(0, 0, 0);
         rb.AddRelativeForce(Vector3.forward * playerSpeed * Time.deltaTime);
@@ -32,13 +33,13 @@ public class Player : MonoBehaviour {
         if (Input.GetKey(KeyCode.D) || Input.GetAxis("XAxis") == -1)
         {
             rb.AddRelativeForce(Vector3.right * playerStrafeSpeed * Time.deltaTime * 30);
-            rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(0, 0, 15), Time.deltaTime * 5);
+            rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(0, 0, -15), Time.deltaTime * 5);
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetAxis("XAxis") == 1)
         {
             rb.AddRelativeForce(Vector3.left * playerStrafeSpeed * Time.deltaTime * 30);
-            rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(0, 0, -15), Time.deltaTime * 5);
+            rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(0, 0, 15), Time.deltaTime * 5);
         }
 
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
