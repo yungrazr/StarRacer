@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 
     public static Rigidbody rb;
     const float playerSpeed = 20;
-    const float playerStrafeSpeed = 25;
+    const float playerStrafeSpeed = 40;
 
     RaycastHit hit;
     float dist;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0, 0, 20);
+        rb.velocity = new Vector3(0, 0, 30);
     }
 	
 	// Update is called once per frame
@@ -33,7 +33,6 @@ public class Player : MonoBehaviour {
         {
             rb.AddRelativeForce(Vector3.right * playerStrafeSpeed * Time.deltaTime * 30);
             rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, Quaternion.Euler(0, 0, 15), Time.deltaTime * 5);
-
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetAxis("XAxis") == 1)
@@ -107,6 +106,12 @@ public class Player : MonoBehaviour {
         {
             trail2.GetComponent<TrailRenderer>().colorGradient = gradient;
             trail2.transform.position = new Vector3(trail2.transform.position.x, Mathf.Lerp(trail2.transform.position.y, hit.point.y + 2, Time.deltaTime / 0.001f), trail2.transform.position.z);
+        }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+
         }
     }
 }
