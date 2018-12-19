@@ -25,7 +25,6 @@ public class DestroyCollectible : MonoBehaviour {
         //else the collectible is removed by the destroy collider.
         else
         {
-            ShowPoints.points++;
             Object.Destroy(this.gameObject);
         }
 
