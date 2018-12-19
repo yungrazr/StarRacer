@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 88
+  controlID: 75
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1403
     height: 947
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 89
+  controlID: 76
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1403
     height: 654
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 90
+  controlID: 77
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 345
     height: 654
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -255,8 +255,8 @@ MonoBehaviour:
     y: 0
     width: 517
     height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -368,28 +368,28 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 60010000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: a231ffff3a34ffffb4f6ffff88f7ffffdaf8fffff8f8ffff02f9ffffe6fbffff000000007830000056390000e6390000
+    m_ExpandedIDs: 58c9fcffa4effcffa420fdffe62dfdffac2efdfff02ffdfffc2ffdff0e30fdffae3cfdff743dfdffb83efdffc43efdffd63efdff2a57fdfff057fdff3459fdff4059fdff5259fdff566dfdff1c6efdff606ffdff726ffdff8e6ffdff02f1ffffd4f2ffffe6fbffff0000000074470000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Player
+      m_OriginalName: Player
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 18292
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Menu
+  - Track2
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -420,14 +420,14 @@ MonoBehaviour:
     height: 633
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 3061.6694297148297
+  lastFramingTime: 2673.0005393991055
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1054.0157, y: 233.99226, z: 214.49805}
+    m_Target: {x: 1.2605286, y: -0.97155, z: 22.232565}
     speed: 2
-    m_Value: {x: 1054.0157, y: 233.99226, z: 214.49805}
+    m_Value: {x: 1.2605286, y: -0.97155, z: 22.232565}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -455,13 +455,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.035983775, y: -0.022482459, z: 0.00080990937, w: -0.99909914}
+    m_Target: {x: -0.15198964, y: 0.7016856, z: -0.15727937, w: -0.6780853}
     speed: 2
-    m_Value: {x: -0.035983775, y: -0.022482459, z: 0.00080990937, w: -0.99909914}
+    m_Value: {x: -0.15198964, y: 0.7016856, z: -0.15727937, w: -0.6780853}
   m_Size:
-    m_Target: 1616.144
+    m_Target: 742.17834
     speed: 2
-    m_Value: 1616.144
+    m_Value: 742.17834
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -564,19 +564,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Music
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Music
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Dano\Documents\GE1-C15469578-Assignment\GE1-Assignment
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 1}
-    m_SelectedIDs: e22a0000
-    m_LastClickedID: 10978
+    m_SelectedIDs: 4e2a0000
+    m_LastClickedID: 10830
     m_ExpandedIDs: 00000000f8290000ea2d0000ec2d0000ee2d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
