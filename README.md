@@ -2,8 +2,10 @@
 
 Star Racer is a audio-visual racing game inspired by AudioSurf. The game involves procedural generation and many visualizations based on the current music track playing. The aim was to create a something that a user could 'play' and interact with, while also performing some cool visual effects.
 
-![YouTube](https://img.youtube.com/vi/YkuTg87b8cg/mqdefault.jpg)
-[https://youtu.be/YkuTg87b8cg](https://youtu.be/YkuTg87b8cg)
+### Youtube Demonstration
+![YouTube](https://img.youtube.com/vi/YkuTg87b8cg/mqdefault.jpg) \
+[https://youtu.be/YkuTg87b8cg](https://youtu.be/YkuTg87b8cg) \
+(Video doesnt do the whole experience any justice)
 
 ## Features
 
@@ -26,5 +28,4 @@ Star Racer is a audio-visual racing game inspired by AudioSurf. The game involve
 Everything was developed personally except some aspects of the AudioAnalyzer which was taken from the course example project.
 
 ### Favourite Aspect
-Personal favourite feature is the moving racetrack, when a song has a lot of low frequencies the track snakes up and down and its a really cool feature.
-
+Personal favourite feature is the moving racetrack, when a song has a lot of low frequencies the track snakes up and down and its really cool.
