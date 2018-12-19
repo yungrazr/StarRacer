@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.27305308, g: 0.3195767, b: 0.49859464, a: 1}
+  m_IndirectSpecularColor: {r: 0.27905032, g: 0.3263342, b: 0.50833565, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -186,7 +186,7 @@ MonoBehaviour:
   radius: 60
   prefab: {fileID: 1116675728661664, guid: 2ed9e0f874cc69b409d6530352251050, type: 2}
   pulseStrength: 20
-  distanceFromPlayer: 100
+  distanceFromPlayer: 40
   frequencyBand: 1
   rotationDirection: 35
 --- !u!4 &149923600
@@ -528,8 +528,8 @@ GameObject:
   - component: {fileID: 676297795}
   - component: {fileID: 676297794}
   - component: {fileID: 676297793}
-  - component: {fileID: 676297796}
   - component: {fileID: 676297797}
+  - component: {fileID: 676297796}
   m_Layer: 0
   m_Name: ThirdPersonCamera
   m_TagString: MainCamera
@@ -603,11 +603,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 676297792}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bf37d445e05604f90695a149a02fd5, type: 3}
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 85a4d7ff10efe514ebc30f9fbb0ad0c7, type: 2}
 --- !u!114 &676297797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11075,8 +11076,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952992865}
   m_LocalRotation: {x: -0.052335896, y: 0, z: 0, w: 0.9986295}
-  m_LocalPosition: {x: 0, y: 1264.24, z: 54.000027}
-  m_LocalScale: {x: 0.99999875, y: 0.99999917, z: 1.0000004}
+  m_LocalPosition: {x: 0, y: 1264.24, z: -439.3}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000004}
   m_Children: []
   m_Father: {fileID: 980953242}
   m_RootOrder: 7
@@ -11092,8 +11093,8 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2.1
-  m_Range: 200
-  m_SpotAngle: 120.1
+  m_Range: 425.7
+  m_SpotAngle: 179
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -11203,6 +11204,7 @@ GameObject:
   - component: {fileID: 2147382380}
   - component: {fileID: 2147382384}
   - component: {fileID: 2147382383}
+  - component: {fileID: 2147382381}
   m_Layer: 0
   m_Name: FirstPersonCamera
   m_TagString: MainCamera
@@ -11223,6 +11225,18 @@ Transform:
   m_Father: {fileID: 980953242}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -2, y: 0, z: 0}
+--- !u!114 &2147382381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2147382379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 85a4d7ff10efe514ebc30f9fbb0ad0c7, type: 2}
 --- !u!81 &2147382383
 AudioListener:
   m_ObjectHideFlags: 0

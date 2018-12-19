@@ -134,7 +134,7 @@ public class SpawnCollectible : MonoBehaviour
             {
                 child.transform.localPosition = new Vector3(child.transform.localPosition.x, Mathf.Lerp(child.transform.localPosition.y, hit.point.y + 2, Time.deltaTime / 0.001f), child.transform.localPosition.z);
             }
-            m_Renderer.material.color = Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[1]);
+            m_Renderer.material.color = Color.HSVToRGB(color, 1f, 1);
 
         }
 
