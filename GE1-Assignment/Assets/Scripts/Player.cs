@@ -93,6 +93,7 @@ public class Player : MonoBehaviour {
         {
             color = 0;
         }
+        /*
         Gradient gradient = new Gradient();
         gradient.SetKeys(
             new GradientColorKey[] { new GradientColorKey(Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[1]), 0.0f), new GradientColorKey(Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[1]), 1.0f) },
@@ -109,6 +110,7 @@ public class Player : MonoBehaviour {
             trail2.GetComponent<TrailRenderer>().colorGradient = gradient;
             trail2.transform.position = new Vector3(trail2.transform.position.x, Mathf.Lerp(trail2.transform.position.y, hit.point.y + 2, Time.deltaTime / 0.001f), trail2.transform.position.z);
         }
+        */
 
         if (Input.GetKey(KeyCode.Escape))
         {

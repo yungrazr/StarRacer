@@ -12,6 +12,7 @@ public class ShowPoints : MonoBehaviour {
     public GameObject MaxPoints;
 	// Use this for initialization
 	void Start() {
+        points = 0;
         MaxPointstext = MaxPoints.GetComponent<Text>();
         pointsText = this.gameObject.GetComponent<Text>();
 	}

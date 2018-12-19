@@ -15,6 +15,7 @@ public class PlayerMenuHover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time);
         if (rb.transform.position.y < 1.1f && goUp)
         {
 

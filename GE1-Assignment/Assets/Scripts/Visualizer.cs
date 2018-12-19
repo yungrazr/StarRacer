@@ -43,13 +43,13 @@ public class Visualizer : MonoBehaviour {
         foreach (Transform child in transform)
         {
             m_Renderer = child.gameObject.GetComponent<Renderer>();
-            child.gameObject.transform.localScale = new Vector3(Mathf.Lerp(child.gameObject.transform.localScale.x, (float)AudioAnalyzer.bands[frequencyBand] * pulseStrength, Time.deltaTime / 0.1f),
-                Mathf.Lerp(child.gameObject.transform.localScale.y, (float)AudioAnalyzer.bands[frequencyBand] * pulseStrength, Time.deltaTime / 0.1f),
-                Mathf.Lerp(child.gameObject.transform.localScale.z, (float)AudioAnalyzer.bands[frequencyBand] *pulseStrength, Time.deltaTime / 0.1f));
+            child.gameObject.transform.localScale = new Vector3(Mathf.Lerp(child.gameObject.transform.localScale.x, (float)AudioAnalyzer.bands[frequencyBand] * pulseStrength, Time.deltaTime),
+                Mathf.Lerp(child.gameObject.transform.localScale.y, (float)AudioAnalyzer.bands[frequencyBand] * pulseStrength, Time.deltaTime),
+                Mathf.Lerp(child.gameObject.transform.localScale.z, (float)AudioAnalyzer.bands[frequencyBand] *pulseStrength, Time.deltaTime));
             m_Renderer.material.color = Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[frequencyBand]);
         }
         angleRotate += (float)AudioAnalyzer.bands[1] * rotationDirection;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angleRotate), 1);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angleRotate), Time.deltaTime);
         transform.position = new Vector3(0, Player.rb.transform.position.y, Player.rb.transform.position.z + distanceFromPlayer);
 
     }
