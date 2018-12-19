@@ -24,7 +24,8 @@ public class RaceTrack : MonoBehaviour
 
         musicTrack = audioSource.GetComponent<AudioSource>();
         trackLength = musicTrack.clip.length;
-        Debug.Log(trackLength);
+        //Debug.Log(trackLength);
+        //Scale the track to the match the length of the song playing
         this.gameObject.transform.localScale = new Vector3(this.gameObject.transform.localScale.x, this.gameObject.transform.localScale.y, trackLength * 0.8f);
     }
 
@@ -38,6 +39,7 @@ public class RaceTrack : MonoBehaviour
         }
         m_Renderer.material.color = Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[1]);
 
+        //Loop to run the Y vertices thru a sine wave, which is magnified by the bass frequency of the track
         Vector3[] vertices = new Vector3[mesh.vertices.Length];
         for (int i = 0; i < vertices.Length; i++)
         {
@@ -47,6 +49,7 @@ public class RaceTrack : MonoBehaviour
         }
         mesh.vertices = vertices;
         mesh.RecalculateNormals();
+        //Set collider to the match the new mesh
         colliderMesh.sharedMesh = mesh;
     }
 }

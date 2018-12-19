@@ -37,6 +37,7 @@ public class AudioAnalyzer : MonoBehaviour
         a = audioSource.GetComponent<AudioSource>();
         spectrum = new float[frameSize];
         bands = new float[(int)Mathf.Log(frameSize, 2)];
+        //Get name of track playing
         var trackName = a.clip.ToString();
         trackName = trackName.Replace("(UnityEngine.AudioClip)", "");
         trackNameText.GetComponent<Text>().text = "Now playing: " + trackName;
@@ -65,6 +66,7 @@ public class AudioAnalyzer : MonoBehaviour
     {
         a.GetSpectrumData(spectrum, 0, FFTWindow.Blackman);
         GetFrequencyBands();
+        //Display track duration
         trackDuration.GetComponent<Text>().text = Math.Round(a.time, 2).ToString();
     }
 }

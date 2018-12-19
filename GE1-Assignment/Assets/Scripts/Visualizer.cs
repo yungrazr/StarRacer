@@ -16,8 +16,10 @@ public class Visualizer : MonoBehaviour {
     public int frequencyBand;
     public int rotationDirection;
 
+
     void Start()
     {
+        //Create number of visualiser objects in a unit circle around position and radius specified
         Vector3 center = transform.position;
         for (int i = 0; i < numObjects; i++)
         {
@@ -40,6 +42,7 @@ public class Visualizer : MonoBehaviour {
             color = 0;
         }
 
+        //For each child visualiser object, perform scaling and colour change based on frequency chosen
         foreach (Transform child in transform)
         {
             m_Renderer = child.gameObject.GetComponent<Renderer>();
@@ -48,8 +51,10 @@ public class Visualizer : MonoBehaviour {
                 Mathf.Lerp(child.gameObject.transform.localScale.z, (float)AudioAnalyzer.bands[frequencyBand] *pulseStrength, Time.deltaTime));
             m_Renderer.material.color = Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[frequencyBand]);
         }
+        //Rotate based on the direction and frequency, and lerp to make sure its smooth
         angleRotate += (float)AudioAnalyzer.bands[1] * rotationDirection;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angleRotate), Time.deltaTime);
+        //Lerp position to set distance from player
         transform.position = new Vector3(0, Player.rb.transform.position.y, Player.rb.transform.position.z + distanceFromPlayer);
 
     }

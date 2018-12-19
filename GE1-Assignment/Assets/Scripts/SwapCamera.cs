@@ -18,7 +18,7 @@ public class SwapCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        //Swapping between first and third person camera
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Change Camera"))
         {
             change = !change;

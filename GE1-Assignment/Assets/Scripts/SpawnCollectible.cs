@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnCollectible : MonoBehaviour
 {
-
     public GameObject prefab;
     public GameObject racetrack;
     private int[] lanes = new int[] { -15, -5, 5, 15 };
@@ -24,18 +23,21 @@ public class SpawnCollectible : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //Generate the collectibles for the whole length of track
+        //Get the total scale length of track
         length = racetrack.transform.localScale.z * 100;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Generation of the collectibles is split into quarters for optimisation
         while(Player.rb.gameObject.transform.position.z <= length/4 && !firstThirdGenerated)
         {
+            //For the first 100units
             for (i = 100; i < (length / 4); i += 100)
             {
-                laneChosen = rnd.Next(0, 4);
+                laneChosen = rnd.Next(0, 4); //Pick a random lane
+                //Generate 4 collectibles
                 for (int j = 0; j < 100; j += 25)
                 {
                     Vector3 pos;
@@ -49,9 +51,9 @@ public class SpawnCollectible : MonoBehaviour
                 }
             }
             firstThirdGenerated = true;
-            Debug.Log("first section generated");
+            //Debug.Log("first section generated");
             TotalCollectible *= 4;
-            Debug.Log(TotalCollectible);
+            //Debug.Log(TotalCollectible);
             ShowPoints.maxPoints = TotalCollectible;
         }
 
@@ -72,7 +74,7 @@ public class SpawnCollectible : MonoBehaviour
                 }
             }
             secondThirdGenerated = true;
-            Debug.Log("2nd section generated");
+            //Debug.Log("2nd section generated");
         }
 
         while (Player.rb.gameObject.transform.position.z >=(length / 4)*2-200 && !ThirdGenerated)
@@ -92,7 +94,7 @@ public class SpawnCollectible : MonoBehaviour
                 }
             }
             ThirdGenerated = true;
-            Debug.Log("third section generated");
+            //Debug.Log("third section generated");
         }
 
         while (Player.rb.gameObject.transform.position.z >= (length / 4)*3 - 200 && !FourthGenerated)
@@ -112,7 +114,7 @@ public class SpawnCollectible : MonoBehaviour
                 }
             }
             FourthGenerated = true;
-            Debug.Log("fourth section generated");
+            //Debug.Log("fourth section generated");
         }
 
 
@@ -121,6 +123,7 @@ public class SpawnCollectible : MonoBehaviour
         {
             color = 0;
         }
+        //Perform raycasting and position lerp to make sure the collectibles stay on racetrack when it moves up and down
         foreach (Transform child in transform)
         {
             m_Renderer = child.gameObject.GetComponent<Renderer>();
@@ -129,7 +132,6 @@ public class SpawnCollectible : MonoBehaviour
 
             if (Physics.Raycast(child.transform.localPosition, direction, out hit, dist))
             {
-
                 child.transform.localPosition = new Vector3(child.transform.localPosition.x, Mathf.Lerp(child.transform.localPosition.y, hit.point.y + 2, Time.deltaTime / 0.001f), child.transform.localPosition.z);
             }
             m_Renderer.material.color = Color.HSVToRGB(color, 1f, (float)AudioAnalyzer.bands[1]);
