@@ -5,27 +5,3 @@ Star Racer is a audio-visual racing game inspired by AudioSurf. The game involve
 ### Youtube Demonstration
 ![YouTube](https://img.youtube.com/vi/gkSG77HfDR0/mqdefault.jpg) \
 [https://youtu.be/gkSG77HfDR0](https://youtu.be/gkSG77HfDR0) \
-(Video doesnt do the whole experience any justice)
-
-## Features
-
- - Race track length generated based on the length of the audio track
-   playing.
- - Race track pulsates, escalates and slopes down based on the chosen
-   frequencies in the track. Tweakable in the Unity Editor.
- - Collectibles that are procedurally generated on the track and can be
-   collected by the player. These are generated for the length of the
-   track and change in colour throughout. The total amount generated is
-   shown to the player so they can see how many they missed at the end.
- - Two different camera angles (First Person, Third Person) that changes
-   the experience. 
- - Controller joystick support.
- - Visualization objects generated around that track that also pulsate
-   and change colour based on the frequencies assigned. Tweakable in Unity Editor.
- - Lovely space skyboxes to reflect the title 'Star Racer'.
- - Great audio visual feedback and sense of speed on the track.
-
-Everything was developed personally except some aspects of the AudioAnalyzer which was taken from the course example project.
-
-### Favourite Aspect
-Personal favourite feature is the moving racetrack, when a song has a lot of low frequencies the track snakes up and down and its really cool.
